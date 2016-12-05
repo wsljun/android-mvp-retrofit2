@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+    defaultConfig {
+        applicationId "com.example.android_tfw_retrofit2_mvp"
+        minSdkVersion 17
+        targetSdkVersion 23
+        versionCode 1
+        versionName "2.1.17"
+//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    //    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
+//    androidTestCompile 'com.android.support.test:runner:0.5'
+//    androidTestCompile 'com.android.support:support-annotations:24.2.1'
+
+    //UI 注解框架
+
+    // logger 简单清晰的log 日志查看库
+
+    //添加okhttp依赖
+//      compile 'com.squareup.okhttp3:okhttp:3.4.1'
+
+    // Retrofit2.0 相关依赖
+    // REtrofit 2.0  OkHttp 是必须的，并且自动设置为了依赖。因此在使用Retrofit2.0时不需要单独配置OkHttp 依赖
+    //返回String retrofit2
+    //如果你想接收json 结果并解析成DAO，你必须把Gson Converter 作为一个独立的依赖添加进来。
+    //    compile 'com.squareup.retrofit:converter-gson:2.0.0-beta1' //retrofit2.0 以后 converter-gson 依赖有变化
+    // log 日志，retrofit2.0 本身不带有日志功能，但是okhttp3 在interceptor中有日志拦截功能
+
+//    除了使用Call模式来定义接口，我们也可以定义自己的type，比如MyCall。。我们把Retrofit 2.0的这个机制称为CallAdapter。
+//    Retrofit团队有已经准备好了的CallAdapter module。其中最著名的module可能是为RxJava准备的CallAdapter，
+//    它将作为Observable返回。要使用它，你的项目依赖中必须包含两个modules。 2.0.0
+    // Because RxAndroid releases are few and far between, it is recommended you also
+
+    // explicitly depend on RxJava's latest version for bug fixes and new features.
+
+
+    compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.android.support:recyclerview-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha1'
+    compile 'com.jakewharton:butterknife:8.2.1'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.orhanobut:logger:1.15'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:+'
+    compile 'com.squareup.retrofit2:converter-scalars:2.0.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.3.1'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.1.6'
+    compile 'com.android.support:support-vector-drawable:23.4.0'
+    testCompile 'junit:junit:4.12'
+    apt 'com.jakewharton:butterknife-compiler:8.2.1'
+}
+
+

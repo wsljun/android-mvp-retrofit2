@@ -1,0 +1,27 @@
+# android_tfw_retrofit2_mvp
+一：本demo 根据google 官方todo_mvp 架构思想进行 实践测试。
+二：网络请求框架使用retrofit2,(后续会结合Rxjava 进行架构设计升级)
+三：简单封装retrofit2 配合mvp_model 数据交互层进行全局网络请求处理。
+
+Todo: 1:BaseActivity & BaseFragment封装，在使用过程中逐步进行封装以配合整个项目使用
+Todo: 2:项目基础架构（retrofit2+mvp）稳定后； 进行dagger2配置。搭配retrofit2使用。
+
+
+
+
+
+
+
+#build 配置
+1：UI注解框架 butterknife
+ app ->build.gradle ：
+    apply plugin: 'com.neenbedankt.android-apt'
+    dependencies {
+            compile 'com.jakewharton:butterknife:8.2.1'
+            apt 'com.jakewharton:butterknife-compiler:8.2.1'
+        }
+ project->build.gradle:
+     dependencies {
+            //  配置Android  apt
+            classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        }
