@@ -25,3 +25,7 @@ Todo: 2:项目基础架构（retrofit2+mvp）稳定后； 进行dagger2配置。
             //  配置Android  apt
             classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         }
+
+
+  //根目录添加  build.gradle    配置Android  apt
+                                classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
